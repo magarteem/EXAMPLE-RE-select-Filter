@@ -1,11 +1,11 @@
 import { memo } from "react";
-import { InitialStateType, ResultType } from "./type";
+import { ReqestApiType } from "./type";
 
 interface FilterDataType {
-  listData: InitialStateType;
+  reqestData: ReqestApiType | null;
 }
 
-export const FilterData: React.FC<FilterDataType> = memo((listData) => {
-  //console.log(listData);
-  return <div></div>;
+export const FilterData: React.FC<FilterDataType> = memo((reqestData) => {
+  //console.log(reqestData.reqestData);
+  return <div>FilterData</div>;
 });

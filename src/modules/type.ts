@@ -55,7 +55,7 @@ export interface ResultType {
   nat: string;
 }
 
-export interface InitialStateType {
+export interface ReqestApiType {
   results: ResultType[] | [];
   info: {
     seed: string;
@@ -63,4 +63,10 @@ export interface InitialStateType {
     page: number;
     version: string;
   };
+}
+//============================
+export interface InitialStateType {
+  reqestData: ReqestApiType | null;
+  isLoading: boolean;
+  error: string | null;
 }

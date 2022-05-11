@@ -1,23 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { FilterData } from "./modules/FilterData";
-import { getPostsList } from "./modules/getDataThunc";
+import { getPostsListThunk } from "./modules/getDataThunc";
 import { SearchField } from "./modules/SearchField";
-import { InitialStateType, ResultType } from "./modules/type";
 
 function App() {
   const dispatch = useAppDispatch();
-  const listData = useAppSelector((state) => state.filterSlaceRebuser.results);
-  const [listDataPosts, setListDataPosts] = useState(dispatch(getPostsList(2)));
+  const { reqestData, isLoading, error } = useAppSelector(
+    (state) => state.filterSlaceRebuser
+  );
 
-  //useEffect(() => {
-  //  dispatch(getPostsList(2));
-  //}, [dispatch]);
+  useEffect(() => {
+    dispatch(getPostsListThunk(10));
+  }, [dispatch]);
+
+  console.log("render App");
 
   return (
     <div>
       <SearchField />
-      {/*<FilterData listData={listDataPosts} />*/}
+      {isLoading && <h1>Loading...</h1>}
+      {error && <h1>Error = {error}</h1>}
+      <FilterData reqestData={reqestData} />
     </div>
   );
 }
