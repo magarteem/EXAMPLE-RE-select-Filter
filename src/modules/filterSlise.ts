@@ -36,23 +36,3 @@ function isError(action: AnyAction) {
 
 export const {} = filterSlace.actions;
 export default filterSlace.reducer;
-
-//extraReducers: {
-//  [getPostsListThunk.pending.type]: (state: InitialStateType) => {
-//    console.log("Идет загрузка");
-//  },
-//  [getPostsListThunk.fulfilled.type]: (
-//    state: InitialStateType,
-//    action: PayloadAction<InitialStateType>
-//  ) => {
-//    console.log("1111111111");
-//    state = action.payload;
-//    console.log(action.payload);
-//  },
-//  [getPostsListThunk.rejected.type]: (
-//    state: InitialStateType,
-//    action: PayloadAction<InitialStateType>
-//  ) => {
-//    console.log("Error");
-//  },
-//},

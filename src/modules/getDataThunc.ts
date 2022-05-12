@@ -12,7 +12,7 @@ export const getPostsListThunk = createAsyncThunk<
     const response = await axios(
       `https://api.randomuser.me/?nat=US&results=${postsNumber}`
     ).then((res) => res.data);
-    return response as ReqestApiType;
+    return response;
   } catch (error) {
     return rejectWithValue(`ошибка  в санке ${error}`);
   }

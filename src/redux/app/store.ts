@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import filterSlace from "../modules/filterSlise";
+import filterSlace from "../../modules/filterSlise";
 
 export const store = configureStore({
   reducer: {

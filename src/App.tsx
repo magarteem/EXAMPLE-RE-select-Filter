@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./app/hooks";
+import { useAppDispatch, useAppSelector } from "./redux/app/hooks";
 import { FilterData } from "./modules/FilterData";
 import { getPostsListThunk } from "./modules/getDataThunc";
 import { SearchField } from "./modules/SearchField";
